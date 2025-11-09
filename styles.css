@@ -149,7 +149,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-primary);
+    color: #FFFFFF;  /* White text for navbar */
     font-weight: 500;
     transition: color 0.3s ease;
     padding: 0.5rem 1rem;
@@ -157,8 +157,8 @@ body {
 }
 
 .nav-links a:hover {
-    color: var(--highlight-color);
-    text-shadow: 0 0 10px rgba(7, 59, 76, 0.8);
+    color: rgba(255, 255, 255, 0.8);  /* Slightly dimmed white on hover */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .mobile-menu-toggle {
