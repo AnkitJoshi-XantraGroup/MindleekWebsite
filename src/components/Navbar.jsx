@@ -38,7 +38,7 @@ const Navbar = () => {
             whileTap={{ scale: 0.95 }}
           >
             <a href="#home" onClick={() => scrollToSection('home')}>
-              Mindleek
+              <img src="/IMG-20251107-WA0003.jpg" alt="Mindleek Logo" />
             </a>
           </motion.div>
 
