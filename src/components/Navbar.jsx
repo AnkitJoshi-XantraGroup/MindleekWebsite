@@ -43,17 +43,17 @@ const Navbar = () => {
           </motion.div>
 
           <ul className="nav-links desktop">
-            {['Services', 'Projects', 'About', 'Contact'].map((item) => (
+            {['Home', 'Services', 'Case Studies', 'About', 'Blog', 'Contact'].map((item) => (
               <motion.li
                 key={item}
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.2 }}
               >
                 <a
-                  href={`#${item.toLowerCase()}`}
+                  href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
                   onClick={(e) => {
                     e.preventDefault()
-                    scrollToSection(item.toLowerCase())
+                    scrollToSection(item.toLowerCase().replace(/\s+/g, '-'))
                   }}
                 >
                   {item}
@@ -96,7 +96,7 @@ const Navbar = () => {
             transition={{ duration: 0.3 }}
           >
             <ul className="mobile-nav-links">
-              {['Services', 'Projects', 'About', 'Contact'].map((item, index) => (
+              {['Home', 'Services', 'Case Studies', 'About', 'Blog', 'Contact'].map((item, index) => (
                 <motion.li
                   key={item}
                   initial={{ opacity: 0, x: -20 }}
@@ -104,10 +104,10 @@ const Navbar = () => {
                   transition={{ delay: index * 0.1 }}
                 >
                   <a
-                    href={`#${item.toLowerCase()}`}
+                    href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
                     onClick={(e) => {
                       e.preventDefault()
-                      scrollToSection(item.toLowerCase())
+                      scrollToSection(item.toLowerCase().replace(/\s+/g, '-'))
                     }}
                   >
                     {item}
