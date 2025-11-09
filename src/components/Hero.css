@@ -1,4 +1,4 @@
-/* macOS-inspired Hero Section - Navy & Teal Logo Colors */
+/* macOS-inspired Hero Section - Clean White Background */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -7,27 +7,21 @@
   justify-content: center;
   overflow: hidden;
   padding-top: 60px;
-  /* Metallic gradient using logo colors: Navy, Teal, White highlights */
+  /* Clean white background like contact section */
   background:
-    linear-gradient(135deg,
-      rgba(0, 61, 91, 0.3) 0%,
-      rgba(23, 185, 168, 0.2) 25%,
-      rgba(45, 212, 195, 0.25) 50%,
-      rgba(23, 185, 168, 0.2) 75%,
-      rgba(0, 61, 91, 0.3) 100%
+    linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 255, 255, 0.95) 50%,
+      rgba(255, 255, 255, 0.98) 100%
     ),
     linear-gradient(135deg,
-      #002840 0%,     /* Dark navy */
-      #003D5B 20%,    /* Navy */
-      #17B9A8 50%,    /* Teal */
-      #2DD4C3 70%,    /* Light teal */
-      #17B9A8 90%,    /* Teal */
-      #003D5B 100%    /* Navy */
+      rgba(23, 185, 168, 0.03) 0%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(0, 61, 91, 0.03) 100%
     );
   box-shadow:
-    inset 0 2px 0 rgba(255, 255, 255, 0.3),
-    inset 0 -2px 0 rgba(0, 40, 64, 0.3),
-    inset 0 0 100px rgba(23, 185, 168, 0.1);
+    inset 0 1px 0 rgba(23, 185, 168, 0.2),
+    inset 0 -1px 0 rgba(0, 61, 91, 0.2);
 }
 
 /* Animated gradient orbs - macOS style with metallic overlay */
@@ -42,48 +36,15 @@
   content: '';
   position: absolute;
   inset: 0;
+  /* Subtle metallic shine on white */
   background:
-    linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0.3) 0%,
-      rgba(255, 255, 255, 0.15) 20%,
-      rgba(255, 255, 255, 0.05) 40%,
-      transparent 60%,
-      rgba(0, 0, 0, 0.05) 80%,
-      rgba(0, 0, 0, 0.15) 100%
-    );
+    radial-gradient(circle at 30% 50%, rgba(23, 185, 168, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 70% 50%, rgba(0, 61, 91, 0.06) 0%, transparent 50%);
   pointer-events: none;
   z-index: 1;
 }
 
-.hero-background::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    110deg,
-    transparent 30%,
-    rgba(255, 255, 255, 0.15) 45%,
-    rgba(255, 255, 255, 0.4) 50%,
-    rgba(255, 255, 255, 0.15) 55%,
-    transparent 70%
-  );
-  animation: shimmer 6s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 2;
-}
-
-@keyframes shimmer {
-  0%, 100% {
-    transform: translateX(-100%) translateY(-100%) rotate(30deg);
-  }
-  50% {
-    transform: translateX(100%) translateY(100%) rotate(30deg);
-  }
-}
+/* Removed animated shimmer for better button visibility */
 
 .gradient-orb {
   position: absolute;
