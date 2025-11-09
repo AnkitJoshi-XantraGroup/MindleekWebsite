@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-col">
             <div className="footer-logo">
-              <img src="/IMG-20251107-WA0003.jpg" alt="Mindleek Logo" style={{ height: '60px', width: 'auto', marginBottom: '1rem' }} />
+              <img src="/logo_website_transparent.png" alt="Mindleek Logo" style={{ height: '60px', width: 'auto', marginBottom: '1rem' }} />
             </div>
             <p className="footer-description">
               AI product studio building the future of intelligent applications.

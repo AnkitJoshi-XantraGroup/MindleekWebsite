@@ -18,19 +18,26 @@
   --macos-green: #34C759;
   --macos-teal: #5AC8FA;
 
-  /* Mindleek Brand Colors - From New Logo */
-  --primary: #C8A870;
-  --secondary: #A8C5D1;
-  --accent: #D4B886;
+  /* Mindleek Brand Colors - From Logo */
+  --navy-blue: #003D5B;
+  --navy-dark: #002840;
+  --teal: #17B9A8;
+  --teal-light: #2DD4C3;
+  --teal-bright: #00E5CC;
+  --white: #FFFFFF;
 
-  /* Neutral Colors */
-  --text-primary: #C8A870;
-  --text-secondary: #B09A6C;
-  --text-tertiary: #D8C8A4;
-  --bg-primary: #A8C5D1;
-  --bg-secondary: #B5D0DC;
-  --bg-tertiary: #9BB8C6;
-  --border: rgba(200, 168, 112, 0.2);
+  --primary: #17B9A8;           /* Teal */
+  --secondary: #003D5B;         /* Navy Blue */
+  --accent: #2DD4C3;            /* Light Teal */
+
+  /* Text Colors */
+  --text-primary: #003D5B;      /* Navy for main text */
+  --text-secondary: #005173;
+  --text-tertiary: #FFFFFF;
+  --bg-primary: #17B9A8;        /* Teal */
+  --bg-secondary: #2DD4C3;      /* Light teal */
+  --bg-tertiary: #003D5B;       /* Navy */
+  --border: rgba(23, 185, 168, 0.3);
 
   /* Glass/Blur Effects */
   --glass-bg: rgba(255, 255, 255, 0.7);
@@ -90,11 +97,56 @@ html {
 body {
   font-family: var(--font-primary);
   color: var(--text-primary);
-  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-tertiary) 100%);
+  /* Metallic gradient using all three logo colors: Navy, Teal, White */
+  background: linear-gradient(135deg,
+    #002840 0%,      /* Dark navy */
+    #003D5B 15%,     /* Navy blue */
+    #17B9A8 40%,     /* Teal */
+    #2DD4C3 60%,     /* Light teal */
+    #17B9A8 80%,     /* Teal */
+    #003D5B 100%     /* Navy blue */
+  );
   line-height: 1.6;
   overflow-x: hidden;
   font-size: 16px;
   font-weight: 400;
+  position: relative;
+}
+
+/* Metallic shine overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(23, 185, 168, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Animated shimmer for metallic effect */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.1) 40%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.1) 60%,
+    transparent 80%
+  );
+  animation: bodyShimmer 8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes bodyShimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
 /* Selection */
