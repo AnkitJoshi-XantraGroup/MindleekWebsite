@@ -1,20 +1,33 @@
-/* macOS-inspired Navbar */
+/* macOS-inspired Navbar - Metallic Edition */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  background: var(--glass-bg);
+  background:
+    linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(248, 255, 254, 0.95) 100%
+    );
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid var(--glass-border);
+  border-bottom: 1px solid rgba(20, 184, 166, 0.1);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.8) inset,
+    0 4px 12px rgba(20, 184, 166, 0.08);
   transition: all var(--transition-base);
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: var(--shadow-sm);
+  background:
+    linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(248, 255, 254, 0.92) 100%
+    );
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 4px 16px rgba(20, 184, 166, 0.12);
 }
 
 .nav-content {
