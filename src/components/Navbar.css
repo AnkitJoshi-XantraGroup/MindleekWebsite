@@ -53,8 +53,10 @@
 }
 
 .logo img {
-  height: 50px;
+  height: 40px;
   width: auto;
+  max-width: none;
+  object-fit: contain;
 }
 
 .nav-links {
