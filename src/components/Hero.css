@@ -1,4 +1,4 @@
-/* macOS-inspired Hero Section with Mindleek Logo Gradient - Metallic Edition */
+/* macOS-inspired Hero Section - Shiny Metallic Teal Edition */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -9,14 +9,14 @@
   padding-top: 60px;
   background:
     linear-gradient(135deg,
-      rgba(168, 197, 209, 0.15) 0%,
-      rgba(200, 168, 112, 0.08) 25%,
-      rgba(181, 208, 220, 0.15) 50%,
-      rgba(200, 168, 112, 0.08) 75%,
-      rgba(168, 197, 209, 0.15) 100%
+      rgba(0, 168, 150, 0.2) 0%,
+      rgba(6, 214, 160, 0.15) 25%,
+      rgba(0, 201, 177, 0.2) 50%,
+      rgba(6, 214, 160, 0.15) 75%,
+      rgba(0, 168, 150, 0.2) 100%
     ),
-    linear-gradient(135deg, #9BB8C6 0%, #A8C5D1 25%, #B5D0DC 50%, #A8C5D1 75%, #C0D6E1 100%);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    linear-gradient(135deg, #008577 0%, #00A896 25%, #06D6A0 50%, #00A896 75%, #00C9B1 100%);
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.3), inset 0 -2px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* Animated gradient orbs - macOS style with metallic overlay */
@@ -55,12 +55,12 @@
   background: linear-gradient(
     110deg,
     transparent 30%,
-    rgba(200, 168, 112, 0.2) 45%,
-    rgba(255, 255, 255, 0.3) 50%,
-    rgba(200, 168, 112, 0.2) 55%,
+    rgba(255, 255, 255, 0.15) 45%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.15) 55%,
     transparent 70%
   );
-  animation: shimmer 8s ease-in-out infinite;
+  animation: shimmer 6s ease-in-out infinite;
   pointer-events: none;
   z-index: 2;
 }
@@ -161,9 +161,8 @@
   margin-bottom: var(--spacing-md);
   color: var(--text-primary);
   text-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.3),
-    0 2px 4px rgba(0, 0, 0, 0.2),
-    0 0 20px rgba(200, 168, 112, 0.4);
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(7, 59, 76, 0.5);
 }
 
 .hero-subtitle {
@@ -172,7 +171,7 @@
   color: var(--text-secondary);
   margin-bottom: var(--spacing-sm);
   line-height: 1.4;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .hero-description {
@@ -181,7 +180,7 @@
   max-width: 700px;
   margin: 0 auto var(--spacing-lg);
   line-height: 1.6;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .hero-cta {
@@ -212,16 +211,16 @@
 .btn-primary {
   background:
     linear-gradient(to bottom,
-      rgba(255, 255, 255, 0.25) 0%,
+      rgba(255, 255, 255, 0.3) 0%,
       transparent 50%,
-      rgba(0, 0, 0, 0.1) 100%
+      rgba(0, 0, 0, 0.15) 100%
     ),
-    linear-gradient(135deg, var(--primary) 0%, #B08D4F 100%);
-  color: var(--bg-tertiary);
+    linear-gradient(135deg, var(--secondary) 0%, #0A4A5C 100%);
+  color: white;
   font-weight: 600;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.4) inset,
-    0 4px 14px rgba(200, 168, 112, 0.4);
+    0 1px 0 rgba(255, 255, 255, 0.3) inset,
+    0 4px 14px rgba(7, 59, 76, 0.5);
   position: relative;
   overflow: hidden;
 }
@@ -236,7 +235,7 @@
   background: linear-gradient(
     45deg,
     transparent 30%,
-    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.4) 50%,
     transparent 70%
   );
   transform: translateX(-100%) translateY(-100%);
@@ -250,15 +249,15 @@
 .btn-primary:hover {
   background:
     linear-gradient(to bottom,
-      rgba(255, 255, 255, 0.3) 0%,
+      rgba(255, 255, 255, 0.35) 0%,
       transparent 50%,
-      rgba(0, 0, 0, 0.15) 100%
+      rgba(0, 0, 0, 0.2) 100%
     ),
-    linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+    linear-gradient(135deg, #0A4A5C 0%, var(--secondary) 100%);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.5) inset,
-    0 6px 20px rgba(200, 168, 112, 0.6),
-    0 0 30px rgba(200, 168, 112, 0.3);
+    0 1px 0 rgba(255, 255, 255, 0.4) inset,
+    0 6px 20px rgba(7, 59, 76, 0.7),
+    0 0 30px rgba(7, 59, 76, 0.4);
 }
 
 .btn-primary svg {

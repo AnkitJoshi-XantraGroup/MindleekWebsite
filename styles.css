@@ -10,20 +10,20 @@
 }
 
 :root {
-    /* Colors - Extracted from New Mindleek Logo */
-    --primary-color: #C8A870;
-    --primary-dark: #B08D4F;
-    --secondary-color: #A8C5D1;
-    --accent-color: #D4B886;
-    --text-primary: #C8A870;
-    --text-secondary: #B09A6C;
-    --text-light: #D8C8A4;
-    --bg-primary: #A8C5D1;
-    --bg-secondary: #B5D0DC;
-    --bg-tertiary: #9BB8C6;
-    --bg-dark: #7A9AAA;
-    --border-color: #D0DDE6;
-    --highlight-color: #C8A870;
+    /* Colors - Dark Blue Text on Shiny Metallic Teal Background */
+    --primary-color: #00A896;
+    --primary-dark: #008577;
+    --secondary-color: #073B4C;
+    --accent-color: #06D6A0;
+    --text-primary: #073B4C;
+    --text-secondary: #0B5563;
+    --text-light: #0F6674;
+    --bg-primary: #00A896;
+    --bg-secondary: #06D6A0;
+    --bg-tertiary: #00C9B1;
+    --bg-dark: #008577;
+    --border-color: #80D4CB;
+    --highlight-color: #073B4C;
 
     /* Typography */
     --font-primary: 'Space Grotesk', sans-serif;
@@ -51,14 +51,28 @@ body {
     font-family: var(--font-secondary);
     color: var(--text-primary);
     line-height: 1.6;
-    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-tertiary) 100%);
+    background: linear-gradient(135deg, #008577 0%, #00A896 25%, #06D6A0 50%, #00A896 75%, #00C9B1 100%);
     overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
+    position: relative;
+    z-index: 1;
 }
 
 /* ============================================
@@ -72,16 +86,29 @@ body {
     right: 0;
     background:
         linear-gradient(to bottom,
-            rgba(168, 197, 209, 0.98) 0%,
-            rgba(181, 208, 220, 0.95) 100%
+            rgba(0, 168, 150, 0.98) 0%,
+            rgba(6, 214, 160, 0.95) 100%
         );
     backdrop-filter: blur(10px);
     box-shadow:
-        0 1px 0 rgba(255, 255, 255, 0.5) inset,
-        0 4px 12px rgba(200, 168, 112, 0.2);
-    border-bottom: 1px solid rgba(200, 168, 112, 0.3);
+        0 1px 0 rgba(255, 255, 255, 0.4) inset,
+        0 4px 12px rgba(7, 59, 76, 0.3);
+    border-bottom: 1px solid rgba(7, 59, 76, 0.2);
     z-index: 1000;
     transition: all 0.3s ease;
+}
+
+.navbar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.2) 0%,
+        transparent 50%,
+        rgba(0, 0, 0, 0.1) 100%
+    );
+    pointer-events: none;
 }
 
 .nav-content {
@@ -124,7 +151,7 @@ body {
 
 .nav-links a:hover {
     color: var(--highlight-color);
-    text-shadow: 0 0 10px rgba(200, 168, 112, 0.5);
+    text-shadow: 0 0 10px rgba(7, 59, 76, 0.8);
 }
 
 .mobile-menu-toggle {
@@ -166,16 +193,16 @@ body {
 .btn-primary {
     background:
         linear-gradient(to bottom,
-            rgba(255, 255, 255, 0.25) 0%,
+            rgba(255, 255, 255, 0.3) 0%,
             transparent 50%,
-            rgba(0, 0, 0, 0.1) 100%
+            rgba(0, 0, 0, 0.15) 100%
         ),
-        linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-    color: var(--bg-dark);
+        linear-gradient(135deg, var(--secondary-color) 0%, #0A4A5C 100%);
+    color: white;
     font-weight: 600;
     box-shadow:
-        0 1px 0 rgba(255, 255, 255, 0.4) inset,
-        0 4px 12px rgba(200, 168, 112, 0.4);
+        0 1px 0 rgba(255, 255, 255, 0.3) inset,
+        0 4px 12px rgba(7, 59, 76, 0.5);
     position: relative;
     overflow: hidden;
 }
@@ -190,7 +217,7 @@ body {
     background: linear-gradient(
         45deg,
         transparent 30%,
-        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0.4) 50%,
         transparent 70%
     );
     transform: translateX(-100%) translateY(-100%);
@@ -204,16 +231,16 @@ body {
 .btn-primary:hover {
     background:
         linear-gradient(to bottom,
-            rgba(255, 255, 255, 0.3) 0%,
+            rgba(255, 255, 255, 0.35) 0%,
             transparent 50%,
-            rgba(0, 0, 0, 0.15) 100%
+            rgba(0, 0, 0, 0.2) 100%
         ),
-        linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+        linear-gradient(135deg, #0A4A5C 0%, var(--secondary-color) 100%);
     transform: translateY(-2px);
     box-shadow:
-        0 1px 0 rgba(255, 255, 255, 0.5) inset,
-        0 6px 20px rgba(200, 168, 112, 0.6),
-        0 0 30px rgba(200, 168, 112, 0.3);
+        0 1px 0 rgba(255, 255, 255, 0.4) inset,
+        0 6px 20px rgba(7, 59, 76, 0.7),
+        0 0 30px rgba(7, 59, 76, 0.4);
 }
 
 .btn-secondary {
@@ -241,16 +268,16 @@ body {
     padding: var(--spacing-xl) 0;
     background:
         linear-gradient(135deg,
-            rgba(168, 197, 209, 0.15) 0%,
-            rgba(200, 168, 112, 0.08) 25%,
-            rgba(181, 208, 220, 0.15) 50%,
-            rgba(200, 168, 112, 0.08) 75%,
-            rgba(168, 197, 209, 0.15) 100%
+            rgba(0, 168, 150, 0.2) 0%,
+            rgba(6, 214, 160, 0.15) 25%,
+            rgba(0, 201, 177, 0.2) 50%,
+            rgba(6, 214, 160, 0.15) 75%,
+            rgba(0, 168, 150, 0.2) 100%
         ),
-        linear-gradient(135deg, #9BB8C6 0%, #A8C5D1 25%, #B5D0DC 50%, #A8C5D1 75%, #C0D6E1 100%);
+        linear-gradient(135deg, #008577 0%, #00A896 25%, #06D6A0 50%, #00A896 75%, #00C9B1 100%);
     position: relative;
     overflow: hidden;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.3), inset 0 -2px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* Metallic shine overlay */
@@ -283,12 +310,12 @@ body {
     background: linear-gradient(
         110deg,
         transparent 30%,
-        rgba(200, 168, 112, 0.2) 45%,
-        rgba(255, 255, 255, 0.3) 50%,
-        rgba(200, 168, 112, 0.2) 55%,
+        rgba(255, 255, 255, 0.15) 45%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0.15) 55%,
         transparent 70%
     );
-    animation: shimmer 8s ease-in-out infinite;
+    animation: shimmer 6s ease-in-out infinite;
     pointer-events: none;
     z-index: 2;
 }
@@ -318,9 +345,8 @@ body {
     margin-bottom: var(--spacing-md);
     color: var(--text-primary);
     text-shadow:
-        0 1px 0 rgba(255, 255, 255, 0.3),
-        0 2px 4px rgba(0, 0, 0, 0.2),
-        0 0 20px rgba(200, 168, 112, 0.4);
+        0 2px 4px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(7, 59, 76, 0.5);
 }
 
 .hero-subtitle {
@@ -356,16 +382,16 @@ body {
     padding: var(--spacing-md) 0;
     background:
         linear-gradient(to bottom,
-            rgba(181, 208, 220, 0.5),
-            rgba(168, 197, 209, 0.8),
-            rgba(181, 208, 220, 0.5)
+            rgba(6, 214, 160, 0.4),
+            rgba(0, 168, 150, 0.6),
+            rgba(6, 214, 160, 0.4)
         );
     text-align: center;
-    border-top: 1px solid rgba(200, 168, 112, 0.2);
-    border-bottom: 1px solid rgba(200, 168, 112, 0.2);
+    border-top: 1px solid rgba(7, 59, 76, 0.3);
+    border-bottom: 1px solid rgba(7, 59, 76, 0.3);
     box-shadow:
-        0 1px 0 rgba(255, 255, 255, 0.4) inset,
-        0 -1px 0 rgba(255, 255, 255, 0.4) inset;
+        0 1px 0 rgba(255, 255, 255, 0.3) inset,
+        0 -1px 0 rgba(255, 255, 255, 0.3) inset;
 }
 
 .trust-text {
@@ -412,9 +438,9 @@ body {
     padding: var(--spacing-xl) 0;
     background:
         linear-gradient(to bottom,
-            rgba(181, 208, 220, 0.6) 0%,
-            rgba(168, 197, 209, 0.4) 50%,
-            rgba(181, 208, 220, 0.6) 100%
+            rgba(6, 214, 160, 0.5) 0%,
+            rgba(0, 168, 150, 0.3) 50%,
+            rgba(6, 214, 160, 0.5) 100%
         );
     position: relative;
 }
@@ -424,8 +450,8 @@ body {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(circle at 20% 50%, rgba(200, 168, 112, 0.06) 0%, transparent 50%),
-        radial-gradient(circle at 80% 50%, rgba(200, 168, 112, 0.06) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -437,16 +463,16 @@ body {
 }
 
 .service-card {
-    background: linear-gradient(135deg, rgba(192, 214, 225, 0.9) 0%, rgba(181, 208, 220, 0.8) 100%);
+    background: linear-gradient(135deg, rgba(0, 201, 177, 0.8) 0%, rgba(6, 214, 160, 0.7) 100%);
     padding: var(--spacing-md);
     border-radius: var(--radius-lg);
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(7, 59, 76, 0.2);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
     box-shadow:
-        0 1px 0 rgba(255, 255, 255, 0.6) inset,
-        0 4px 12px rgba(200, 168, 112, 0.15);
+        0 1px 0 rgba(255, 255, 255, 0.4) inset,
+        0 4px 12px rgba(7, 59, 76, 0.2);
 }
 
 .service-card::before {
@@ -459,7 +485,7 @@ body {
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(200, 168, 112, 0.2),
+        rgba(255, 255, 255, 0.3),
         transparent
     );
     transition: left 0.5s ease;
@@ -472,10 +498,10 @@ body {
 .service-card:hover {
     transform: translateY(-8px);
     box-shadow:
-        0 1px 0 rgba(255, 255, 255, 0.8) inset,
-        0 8px 24px rgba(200, 168, 112, 0.3),
-        0 0 0 1px var(--primary-color);
-    border-color: var(--primary-color);
+        0 2px 0 rgba(255, 255, 255, 0.5) inset,
+        0 8px 24px rgba(7, 59, 76, 0.4),
+        0 0 0 2px rgba(7, 59, 76, 0.3);
+    border-color: rgba(7, 59, 76, 0.4);
 }
 
 .service-icon {
@@ -483,21 +509,21 @@ body {
     height: 64px;
     background:
         linear-gradient(135deg,
-            rgba(255, 255, 255, 0.3) 0%,
+            rgba(255, 255, 255, 0.4) 0%,
             transparent 40%,
-            rgba(0, 0, 0, 0.1) 100%
+            rgba(0, 0, 0, 0.15) 100%
         ),
-        linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+        linear-gradient(135deg, var(--secondary-color) 0%, #0A4A5C 100%);
     border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: var(--spacing-sm);
-    color: var(--bg-dark);
+    color: white;
     position: relative;
     box-shadow:
-        0 1px 0 rgba(255, 255, 255, 0.5) inset,
-        0 4px 12px rgba(200, 168, 112, 0.4);
+        0 1px 0 rgba(255, 255, 255, 0.3) inset,
+        0 4px 12px rgba(7, 59, 76, 0.6);
     overflow: hidden;
 }
 
@@ -511,7 +537,7 @@ body {
     background: linear-gradient(
         45deg,
         transparent 30%,
-        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0.5) 50%,
         transparent 70%
     );
     animation: iconShimmer 3s ease-in-out infinite;
@@ -552,16 +578,16 @@ body {
     padding: var(--spacing-xl) 0;
     background:
         linear-gradient(to bottom,
-            rgba(181, 208, 220, 0.7) 0%,
-            rgba(192, 214, 225, 0.5) 50%,
-            rgba(181, 208, 220, 0.7) 100%
+            rgba(6, 214, 160, 0.6) 0%,
+            rgba(0, 201, 177, 0.4) 50%,
+            rgba(6, 214, 160, 0.6) 100%
         );
     position: relative;
-    border-top: 1px solid rgba(200, 168, 112, 0.2);
-    border-bottom: 1px solid rgba(200, 168, 112, 0.2);
+    border-top: 1px solid rgba(7, 59, 76, 0.3);
+    border-bottom: 1px solid rgba(7, 59, 76, 0.3);
     box-shadow:
-        0 1px 0 rgba(255, 255, 255, 0.4) inset,
-        0 -1px 0 rgba(255, 255, 255, 0.4) inset;
+        0 1px 0 rgba(255, 255, 255, 0.3) inset,
+        0 -1px 0 rgba(255, 255, 255, 0.3) inset;
 }
 
 .projects-grid {
@@ -572,22 +598,22 @@ body {
 }
 
 .project-card {
-    background: linear-gradient(135deg, rgba(192, 214, 225, 0.9) 0%, rgba(181, 208, 220, 0.8) 100%);
+    background: linear-gradient(135deg, rgba(0, 201, 177, 0.8) 0%, rgba(6, 214, 160, 0.7) 100%);
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow:
-        0 1px 0 rgba(255, 255, 255, 0.6) inset,
-        0 4px 12px rgba(200, 168, 112, 0.15);
+        0 1px 0 rgba(255, 255, 255, 0.4) inset,
+        0 4px 12px rgba(7, 59, 76, 0.2);
     transition: all 0.3s ease;
-    border: 1px solid rgba(200, 168, 112, 0.2);
+    border: 1px solid rgba(7, 59, 76, 0.2);
 }
 
 .project-card:hover {
     transform: translateY(-8px);
     box-shadow:
-        0 1px 0 rgba(255, 255, 255, 0.8) inset,
-        0 12px 32px rgba(200, 168, 112, 0.3);
-    border-color: rgba(200, 168, 112, 0.5);
+        0 2px 0 rgba(255, 255, 255, 0.5) inset,
+        0 12px 32px rgba(7, 59, 76, 0.4);
+    border-color: rgba(7, 59, 76, 0.4);
 }
 
 .project-image {
@@ -596,13 +622,13 @@ body {
     overflow: hidden;
     background:
         linear-gradient(135deg,
-            rgba(255, 255, 255, 0.2) 0%,
+            rgba(255, 255, 255, 0.3) 0%,
             transparent 50%,
-            rgba(0, 0, 0, 0.1) 100%
+            rgba(0, 0, 0, 0.15) 100%
         ),
-        linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+        linear-gradient(135deg, var(--secondary-color) 0%, #0A4A5C 100%);
     position: relative;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .project-image::after {
@@ -611,7 +637,7 @@ body {
     inset: 0;
     background: linear-gradient(
         to bottom right,
-        rgba(255, 255, 255, 0.3) 0%,
+        rgba(255, 255, 255, 0.4) 0%,
         transparent 50%
     );
 }
@@ -684,16 +710,16 @@ body {
     padding: var(--spacing-xl) 0;
     background:
         linear-gradient(135deg,
-            rgba(200, 168, 112, 0.15) 0%,
-            rgba(212, 184, 134, 0.1) 50%,
-            rgba(200, 168, 112, 0.15) 100%
+            rgba(7, 59, 76, 0.2) 0%,
+            rgba(10, 74, 92, 0.15) 50%,
+            rgba(7, 59, 76, 0.2) 100%
         ),
-        linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 30%, var(--accent-color) 70%, var(--primary-color) 100%);
-    color: var(--bg-dark);
+        linear-gradient(135deg, var(--secondary-color) 0%, #0A4A5C 30%, var(--secondary-color) 70%, #095A70 100%);
+    color: white;
     text-align: center;
     position: relative;
     overflow: hidden;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.3);
 }
 
 /* Metallic shine for CTA */
